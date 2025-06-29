@@ -1,0 +1,108 @@
+## Retrieve all the posts.
+GET http://localhost:3001/api/posts HTTP/1.1
+###
+
+## Retrieve a specific post specifing its title.
+GET http://localhost:3001/api/posts/ciao HTTP/1.1
+###
+
+## Create new post FIXME da togliere authorID
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Hello Everyone",
+    "authorID": 1, 
+    "text": "Buongiornissimo",
+    "maximum_comments": 10
+}
+###
+
+## Create another post FIXME da togliere authorID
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Hello Everyone 9.0",
+    "authorID": 1,
+    "text": "Buongiornissimo"
+
+}
+###
+
+## Create another post 
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Hello Everyone 7.0",
+    "text": ""
+
+}
+###
+
+## Retrieve all the comments.
+GET http://localhost:3001/api/comments HTTP/1.1
+###
+
+## Retrieve a specific comment specifing its id.
+GET http://localhost:3001/api/comments/3 HTTP/1.1
+###
+
+## Retrieve all the comments associated to a post
+GET http://localhost:3001/api/comments/post/How%20to%20learn%20SQL%3F HTTP/1.1
+###
+
+## Create new comment FIXME da togliere authorID
+POST http://localhost:3001/api/comments HTTP/1.1
+content-type: application/json
+
+{
+    "text": "Comment testo",
+    "authorID": 1, 
+    "postTitle": "How to learn SQL?"
+}
+###
+
+## Create another comment FIXME
+POST http://localhost:3001/api/comments HTTP/1.1
+content-type: application/json
+
+{
+    "text": "Comment testo", 
+    "postTitle": "How to learn SQL?"
+}
+###
+
+
+## Create new post (check the maximum number of comments)
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Post_Title",
+    "text": "Buongiornissimo",
+    "maximum_comments": 2
+}
+###
+
+## Create another comment (check the maximum number of comments) FIXME
+POST http://localhost:3001/api/comments HTTP/1.1
+content-type: application/json
+
+{
+    "text": "TESTO COMMENTO", 
+    "postTitle": "Post_Title"
+}
+###
+
+
+## Create new post (prova con maximum_comments 0)
+POST http://localhost:3001/api/posts HTTP/1.1
+content-type: application/json
+
+{
+    "title": "kabashh2",
+    "text": "Buongiornissimo",
+    "maximum_comments": 0
+}
